@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,7 +7,37 @@
     <title>web</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <h1>WASM Image Filters</h1>
+
+      <div class="row">
+        <input type="file" id="file" accept="image/*" />
+        <button id="btn-js">Filtre JS (grayscale)</button>
+        <button id="btn-wasm">Filtre WASM (grayscale)</button>
+      </div>
+
+      <div class="row">
+        <label>
+          Inversion (WASM) :
+          <input
+            id="invert"
+            type="range"
+            min="0"
+            max="1"
+            step="0.01"
+            value="0"
+          />
+          <span id="invertVal">0.00</span>
+        </label>
+      </div>
+
+      <div class="row">
+        <span id="log"></span>
+      </div>
+
+      <canvas id="canvas"></canvas>
+    </div>
+
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
